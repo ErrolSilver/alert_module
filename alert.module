@@ -1,0 +1,35 @@
+<?php 
+/**
+ *
+ *
+*/
+
+/**
+ * Implements hook_menu().
+ *
+ * Creates the menu callback for the module admin page.
+ */
+function alert_menu() {
+  $items['admin/config/content/alert'] = array(
+    'title' => 'Alert - Custom Alert Message',
+    'description' => 'Set a custom alert message',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('alert_admin'),
+    'access arguments' => array('administer alerts'),
+    'file' => 'alert.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function alert_permission() {
+  return array(
+    'administer Alert' => array(
+      'title' => 'Administer Bean No Title',
+      'description' => 'Create an alert by leveraging drupal_set_message',
+    ),
+  );
+}

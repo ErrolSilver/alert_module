@@ -1,0 +1,5 @@
+name = "Alert"
+description = "Create an alert by leveraging drupal_set_message"
+core = 7.x
+version = "7.x-1.0"
+
