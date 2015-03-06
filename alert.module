@@ -2,7 +2,7 @@
 /**
  *
  *
-*/
+ */
 
 /**
  * Implements hook_menu().
@@ -14,10 +14,10 @@ function alert_menu() {
     'title' => 'Alert - Custom Alert Message',
     'description' => 'Set a custom alert message',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('alert_admin'),
+    'page arguments' => array('alert_set_message_form'),
     'access arguments' => array('administer alerts'),
     'file' => 'alert.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_CALLBACK,
   );
   return $items;
 }
