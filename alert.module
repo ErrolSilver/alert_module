@@ -17,7 +17,7 @@ function alert_menu() {
     'page arguments' => array('alert_set_message_form'),
     'access arguments' => array('administer alerts'),
     'file' => 'alert.admin.inc',
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
   );
   return $items;
 }
