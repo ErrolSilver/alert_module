@@ -39,6 +39,6 @@ function alert_permission() {
  */
 function alert_init() {
   if (drupal_is_front_page() && variable_get('alert_custom_message_contents') !== '<none>' || '') {
-    drupal_set_message(variable_get('alert_custom_message_contents'));
+    drupal_set_message(variable_get('alert_custom_message_contents'), 'warning', FALSE);
   }
 }
