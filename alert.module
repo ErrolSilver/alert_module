@@ -17,7 +17,7 @@ function alert_menu() {
     'page arguments' => array('alert_set_message_form'),
     'access arguments' => array('administer alerts'),
     'file' => 'alert.admin.inc',
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
   );
   return $items;
 }
@@ -27,9 +27,10 @@ function alert_menu() {
  */
 function alert_permission() {
   return array(
-    'administer Alert' => array(
-      'title' => 'Administer Bean No Title',
+    'administer_alert' => array(
+      'title' => 'Administer Alert',
       'description' => 'Create an alert by leveraging drupal_set_message',
+      'restrict access' => TRUE,
     ),
   );
 }
@@ -39,6 +40,6 @@ function alert_permission() {
  */
 function alert_init() {
   if (drupal_is_front_page() && variable_get('alert_custom_message_contents') !== '<none>' || '') {
-    drupal_set_message(variable_get('alert_custom_message_contents'), 'warning', FALSE);
+    drupal_set_message(filter_xss_admin(variable_get('alert_custom_message_contents')), 'warning', FALSE);
   }
 }
